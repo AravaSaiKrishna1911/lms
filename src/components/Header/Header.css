@@ -13,24 +13,23 @@
 
 .nav-links {
     display: flex;
-    gap: 10px; /* Keeps links close together */
+    gap: 10px;
+    align-items: center;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 8px 12px; /* Adds space inside the box */
-    border-radius: 5px; /* Rounds the corners */
+    padding: 8px 12px;
+    border-radius: 5px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light white overlay */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft glowing effect */
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-
-
 
 .search-bar input {
     padding: 5px;
@@ -38,10 +37,26 @@
     border: none;
 }
 
-.auth-buttons .login-btn {
+.login-btn {
     padding: 5px 10px;
-    background-color: white;
+    background-color: rgb(16, 13, 13);
     color: #4EA685;
     border-radius: 5px;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-btn {
+    padding: 5px 10px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
 }

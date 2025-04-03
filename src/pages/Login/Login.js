@@ -26,15 +26,29 @@ const Login = () => {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Login successful!");
                 localStorage.setItem("token", data.token); // Store token
                 localStorage.setItem("userRole", data.user.role); // Store role
-                navigate("/"); // Redirect to homepage
+                
+                // Redirect based on user role
+                switch (data.user.role) {
+                    case "admin":
+                        navigate("/admin");
+                        break;
+                    case "instructor":
+                        navigate("/instructor");
+                        break;
+                    case "student":
+                        navigate("/student");
+                        break;
+                    default:
+                        navigate("/");
+                }
             } else {
                 alert(data.message);
             }
         } catch (error) {
             console.error("Error:", error);
+            alert("An error occurred during login");
         }
     };
 
